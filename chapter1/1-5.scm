@@ -11,7 +11,7 @@
 ; (if :t 0 (p))
 ; 0
 
-; Aplicative:
+; Applicative:
 ; (test 0 (p))
 ; (test 0 (p))
 ; (test 0 (p))
