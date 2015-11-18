@@ -70,4 +70,4 @@
 
 ; h(0) = 0
 ; h(1) = 2
-; h(n) = 2 ^ h(n - 1) = 2 ^ 2 ^ ... ^ 2 (n 2s)
+; h(n) = 2 ^ h(n - 1) = 2 ↑↑ n (Knuth's up-arrow notation)
