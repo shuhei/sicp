@@ -24,21 +24,19 @@
 
 ; Improved implementation.
 (define (sqrt x)
-        (define (improve-rate guess)
-                (/ (- (improve guess) guess) guess))
-        (define (good-enough? guess)
-                (< (abs (improve-rate guess)) 0.0000001))
+        (define (good-enough? previous guess)
+                (< (abs (/ (- guess previous) guess)) 0.0000001))
         (define (improve guess)
                 (average guess (/ x guess)))
-        (define (sqrt-iter guess)
-                (if (good-enough? guess)
+        (define (sqrt-iter previous guess)
+                (if (good-enough? previous guess)
                     guess
-                    (sqrt-iter (improve guess))))
-        (sqrt-iter 1.0))
+                    (sqrt-iter guess (improve guess))))
+        (sqrt-iter 2.0 1.0))
 
 (sqrt 2)
-; 1.4142135623746899
+; 1.414213562373095
 (sqrt 20000000000000000)
-; 141421356.23732778
+; 141421356.23730952
 (sqrt 0.00000000000002)
-; 1.4142135785200824e-7
+; 1.4142135623730952e-7
