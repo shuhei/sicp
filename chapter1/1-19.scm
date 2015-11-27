@@ -13,3 +13,17 @@
                               p
                               q
                               (- count 1)))))
+
+; Fibonacci function as matrix calculation!
+;
+; |a'| = |1 1| * |a|
+; |b'|   |1 0|   |b|
+;
+;
+; |a''| = |1 1| * |1 1| * |a|
+; |b''|   |1 0|   |1 0|   |b|
+;
+; |a''| = |2 1| * |a|
+; |b''|   |1 1|   |b|
+
+; Where do the p and q come from?

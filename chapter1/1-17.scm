@@ -6,6 +6,7 @@
 (define (even? n)
         (= (remainder n 2) 0))
 
+; double and halve are both bit-shifting!
 (define (double n)
         (+ n n))
 
