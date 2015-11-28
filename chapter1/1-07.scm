@@ -1,18 +1,18 @@
 (define (average x y)
-        (/ (+ x y) 2))
+  (/ (+ x y) 2))
 
 
 ; Original implementation.
 (define (original-sqrt x)
-        (define (good-enough? guess)
-                (< (abs (- (square guess) x)) 0.001))
-        (define (improve guess)
-                (average guess (/ x guess)))
-        (define (sqrt-iter guess)
-                (if (good-enough? guess)
-                    guess
-                    (sqrt-iter (improve guess))))
-        (sqrt-iter 1.0))
+  (define (good-enough? guess)
+    (< (abs (- (square guess) x)) 0.001))
+  (define (improve guess)
+    (average guess (/ x guess)))
+  (define (sqrt-iter guess)
+    (if (good-enough? guess)
+        guess
+        (sqrt-iter (improve guess))))
+  (sqrt-iter 1.0))
 
 (original-sqrt 2)
 ; 1.4142156862745097
@@ -24,15 +24,15 @@
 
 ; Improved implementation.
 (define (sqrt x)
-        (define (good-enough? previous guess)
-                (< (abs (/ (- guess previous) guess)) 0.0000001))
-        (define (improve guess)
-                (average guess (/ x guess)))
-        (define (sqrt-iter previous guess)
-                (if (good-enough? previous guess)
-                    guess
-                    (sqrt-iter guess (improve guess))))
-        (sqrt-iter 2.0 1.0))
+  (define (good-enough? previous guess)
+    (< (abs (/ (- guess previous) guess)) 0.0000001))
+  (define (improve guess)
+    (average guess (/ x guess)))
+  (define (sqrt-iter previous guess)
+    (if (good-enough? previous guess)
+        guess
+        (sqrt-iter guess (improve guess))))
+  (sqrt-iter 2.0 1.0))
 
 (sqrt 2)
 ; 1.414213562373095

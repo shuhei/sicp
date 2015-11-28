@@ -1,8 +1,8 @@
 ; Recursive process
 (define (+ a b)
-        (if (= a 0)
-            b
-            (inc (+ (dec a) b))))
+  (if (= a 0)
+      b
+      (inc (+ (dec a) b))))
 
 (+ 4 5)
 (inc (+ 3 5))
@@ -17,9 +17,9 @@
 
 ; Iterative process
 (define (+ a b)
-        (if (= a 0)
-            b
-            (+ (dec a) (inc b))))
+  (if (= a 0)
+      b
+      (+ (dec a) (inc b))))
 
 (+ 4 5)
 (+ 3 6)
