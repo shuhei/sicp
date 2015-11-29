@@ -6,16 +6,20 @@
 ; Normal-order: 18 times
 ;
 ; Let's say A(n) and B(n) as numbers of remainder calls in `a`/`b` at nth call of `gcd`.
-; A(0) = 0
-; B(0) = 0
-; A(n + 1) = B(n)
-; B(n + 1) = 1 + A(n) + B(n) = 1 + B(n - 1) + B(n)
+; A(0) = 0, A(1) = 0
+; B(0) = 0, B(1) = 1
+; A(n) = B(n - 1)
+; B(n) = 1 + A(n - 1) + B(n - 1) = 1 + B(n - 1) + B(n - 2)
 ;
 ; T(n), the total number of remainder calls in n gcd calls, is:
-; T(n) = Σ(n)(B(k)) + A(n)
+; T(n) = Σn(B(k)) + A(n)
 ;
-; B(n) = Fib(n) + 2(n - 2)
-; A(n) = Fib(n - 1)  + 2(n - 3)
+; Let's say S(n) = Σn(Fib(n)) = Fib(n + 2) - Fib(2) = Fib(n + 2) - 1
+; S(0) = 0, S(1) = 1
+; S(n) = 1 + S(n - 1) + S(n - 2)
+;
+; B(n) = S(n) = Fib(n + 2) - 1
+; A(n) = Fib(n + 1) - 1
 (gcd 206 40)
 (gcd 40 (remainder 206 40))
 (if (= (remainder 206 40) 0)
