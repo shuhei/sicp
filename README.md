@@ -27,6 +27,10 @@ My humble solutions to the exercises of [Structure and Interpretation of Compute
 
 ## 2 Building Abstractions with Data
 
+### 2.1 Introduction to Data Abstraction
+
+- 2.1.1 Example: Arithmetic Operations for Rational Numbers [2.1](2-1/2-01.scm)
+
 ## 3 Modularity, Objects, and State
 
 ## 4 Metalinguistic Abstraction
