@@ -6,12 +6,12 @@ My humble solutions to the exercises of [Structure and Interpretation of Compute
 
 ### 1.1 The Elements of Programming
 
-- 1.1.6 Conditional Expressions and Predicates [1.1](1-1/1-1.scm), [1.2](1-1/1-2.scm), [1.3](1-1/1-3.scm), [1.4](1-1/1-4.scm), [1.5](1-1/1-5.scm)
-- 1.1.7 Example: Square Roots by Newton's Method [1.6](1-1/1-6.scm), [1.7](1-1/1-7.scm), [1.8](1-1/1-8.scm)
+- 1.1.6 Conditional Expressions and Predicates [1.1](1-1/1-01.scm), [1.2](1-1/1-02.scm), [1.3](1-1/1-03.scm), [1.4](1-1/1-04.scm), [1.5](1-1/1-05.scm)
+- 1.1.7 Example: Square Roots by Newton's Method [1.6](1-1/1-06.scm), [1.7](1-1/1-07.scm), [1.8](1-1/1-08.scm)
 
 ### 1.2 Procedures and the Processes They Generate
 
-- 1.2.1 Linear Recursion and Iteration [1.9](1-2/1-9.scm), [1.10](1-2/1-10.scm)
+- 1.2.1 Linear Recursion and Iteration [1.9](1-2/1-09.scm), [1.10](1-2/1-10.scm)
 - 1.2.2 Tree Recursion [1.11](1-2/1-11.scm), [1.12](1-2/1-12.scm), [1.13](1-2/1-13.scm)
 - 1.2.3 Orders of Growth [1.14](1-2/1-14.scm), [1.15](1-2/1-15.scm)
 - 1.2.4 Exponentiation [1.16](1-2/1-16.scm), [1.17](1-2/1-17.scm), [1.18](1-2/1-18.scm), [1.19](1-2/1-19.scm)
