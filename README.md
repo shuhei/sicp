@@ -16,7 +16,7 @@ My humble solutions to the exercises of [Structure and Interpretation of Compute
 - 1.2.3 Orders of Growth [1.14](1-2/1-14.scm), [1.15](1-2/1-15.scm)
 - 1.2.4 Exponentiation [1.16](1-2/1-16.scm), [1.17](1-2/1-17.scm), [1.18](1-2/1-18.scm), [1.19](1-2/1-19.scm)
 - 1.2.5 Greatest Common Divisors [1.20](1-2/1-20.scm)
-- 1.2.6 Example: Testing for Primality [1.21](1-2/1-21.scm), [1.22](1-2/1-22.scm)
+- 1.2.6 Example: Testing for Primality [1.21](1-2/1-21.scm), [1.22](1-2/1-22.scm), 1.23, 1.24, 1.25, 1.26, 1.27, 1.28
 
 ### 1.3 Formulating Abstractions with Higher-Order Procedures
 
