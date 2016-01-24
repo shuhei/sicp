@@ -2,7 +2,7 @@
 
 My humble solutions to the exercises of [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/).
 
-## 1. Building Abstractions with Procedures
+## 1 Building Abstractions with Procedures
 
 ### 1.1 The Elements of Programming
 
@@ -24,3 +24,11 @@ My humble solutions to the exercises of [Structure and Interpretation of Compute
 - 1.3.2 Constructing Procedures Using `Labmda` [1.34](1-3/1-34.scm)
 - 1.3.3 Procedures as General Methods [1.35](1-3/1-35.scm), [1.36](1-3/1-36.scm), [1.37](1-3/1-37.scm), [1.38](1-3/1-38.scm), [1.39](1-3/1-39.scm)
 - 1.3.4 Procedures as Returned Values [1.40](1-3/1-40.scm), [1.41](1-3/1.41.scm), 1.42, 1.43, 1.44, 1.45, 1.46
+
+## 2 Building Abstractions with Data
+
+## 3 Modularity, Objects, and State
+
+## 4 Metalinguistic Abstraction
+
+## 5 Computing with Register Machines
