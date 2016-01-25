@@ -32,6 +32,15 @@ My humble solutions to the exercises of [Structure and Interpretation of Compute
 - 2.1.1 Example: Arithmetic Operations for Rational Numbers [2.1](2-1/2-01.scm)
 - 2.1.2 Abstraction Barriers [2.2](2-1/2-02.scm), 2.3
 - 2.1.3 What is Meant by Data?
+- 2.1.4 Extended Exercise: Interval Arithmetic
+
+### 2.2 Hierarchical Data and the Closure Property
+
+### 2.3 Symbolic Data
+
+### 2.4 Multiple Representations for Abstract Data
+
+### 2.5 Systems with Generic Operations
 
 ## 3 Modularity, Objects, and State
 
