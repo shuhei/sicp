@@ -32,7 +32,7 @@ My humble solutions to the exercises of [Structure and Interpretation of Compute
 - 2.1.1 Example: Arithmetic Operations for Rational Numbers [2.1](2-1/2-01.scm)
 - 2.1.2 Abstraction Barriers [2.2](2-1/2-02.scm), [2.3](2-1/2-03.scm)
 - 2.1.3 What is Meant by Data? [2.4](2-1/2-04.scm), [2.5](2-1/2-05.scm), [2.6](2-1/2-06.scm)
-- 2.1.4 Extended Exercise: Interval Arithmetic [2.7, 2.8, 2.9, 2.10, 2.11, 2.12, 2.13](2-1/2-07_2-13.scm), 2.14, 2.15, 2.16
+- 2.1.4 Extended Exercise: Interval Arithmetic [2.7, 2.8, 2.9, 2.10, 2.11, 2.12, 2.13, 2.14, 2.15, 2.16](2-1/2-07_16.scm)
 
 ### 2.2 Hierarchical Data and the Closure Property
 
