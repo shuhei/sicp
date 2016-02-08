@@ -37,7 +37,7 @@ My humble solutions to the exercises of [Structure and Interpretation of Compute
 ### 2.2 Hierarchical Data and the Closure Property
 
 - 2.2.1 Representing Sequences [2.17](2-2/2-17.scm), [2.18](2-2/2-18.scm), [2.19](2-2/2-19.scm), [2.20](2-2/2-20.scm), [2.21](2-2/2-21.scm), [2.22](2-2/2-22.scm), [2.23](2-2/2-23.scm)
-- 2.2.2 Hierarchical Structures 2.24, ..., 2.32
+- 2.2.2 Hierarchical Structures [2.24](2-2/2-24.scm), [2.25](2-2/2-25.scm), [2.26](2-2/2-26.scm), ..., 2.32
 - 2.2.3 Sequences and Conventional Interfaces 2.33, ..., 2.43
 - 2.2.4 Example: A Picture Language 2.44, ..., 2.52
 
