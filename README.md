@@ -39,7 +39,7 @@ My humble solutions to the exercises of [Structure and Interpretation of Compute
 - 2.2.1 Representing Sequences [2.17](2-2/2-17.scm), [2.18](2-2/2-18.scm), [2.19](2-2/2-19.scm), [2.20](2-2/2-20.scm), [2.21](2-2/2-21.scm), [2.22](2-2/2-22.scm), [2.23](2-2/2-23.scm)
 - 2.2.2 Hierarchical Structures [2.24](2-2/2-24.scm), [2.25](2-2/2-25.scm), [2.26](2-2/2-26.scm), [2.27](2-2/2-27.scm), [2.28](2-2/2-28.scm), [2.29](2-2/2-29.scm), [2.30](2-2/2-30.scm), [2.31](2-2/2-31.scm), [2.32](2-2/2-32.scm)
 - 2.2.3 Sequences and Conventional Interfaces [2.33](2-2/2-33.scm), [2.34](2-2/2-34.scm), [2.35](2-2/2-35.scm), [2.36](2-2/2-36.scm), [2.37](2-2/2-37.scm), [2.38](2-2/2-38.scm), [2.39](2-2/2-39.scm), [2.40](2-2/2-40.scm), [2.41](2-2/2-41.scm), [2.42, 2.43](2-2/2-42_43.scm)
-- 2.2.4 Example: A Picture Language [2.44, ... 2.49](2-2/2-44_49.scm), ..., 2.52
+- 2.2.4 Example: A Picture Language [2.44, ... 2.52](2-2/2-44_52.rkt) Run with [Racket](https://racket-lang.org/)
 
 ### 2.3 Symbolic Data
 
