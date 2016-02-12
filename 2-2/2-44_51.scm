@@ -215,3 +215,58 @@
               (make-segment p3 p4)))))))
 ; 4.
 ; ???
+
+; Exercise 2.50
+(define (transform-painter painter origin corner1 corner2)
+  (lambda (frame)
+    (let ((m (frame-coord-map frame)))
+      (let ((new-origin (m origin)))
+        (painter (make-frame new-origin
+                             (sub-vect (m corner1) new-origin)
+                             (sub-vect (m corner2) new-origin)))))))
+
+(define (flip-horiz painter)
+  (transform-painter
+    painter
+    (make-vect 1.0 0.0)
+    (make-vect 0.0 0.0)
+    (make-vect 1.0 1.0)))
+
+(define (rotate180 painter)
+  (transform-painter
+    painter
+    (make-vect 1.0 1.0)
+    (make-vect 0.0 1.0)
+    (make-vect 1.0 0.0)))
+
+(define (rotate270 painter)
+  (transform-painter
+    painter
+    (make-vect 0.0 1.0)
+    (make-vect 0.0 0.0)
+    (make-vect 1.0 1.0)))
+
+; Exercise 2.51
+; Straightforward
+(define (below painter1 painter2)
+  (let ((split-point (make-vect 0.0 0.5)))
+    (let ((paint-bottom (transform-painter
+                        painter1
+                        (make-vect 0.0 0.0)
+                        (make-vect 1.0 0.0)
+                        split-point))
+          (paint-top (transform-painter
+                       painter2
+                       split-point
+                       (make-vect 1.0 0.5)
+                       (make-vect 0.0 1.0))))
+      (lambda (frame)
+        (paint-left frame)
+        (paint-top frame)))))
+
+; With beside and rotations
+(define (below painter1 painter2)
+  (rotate90
+    (lambda (frame)
+      (beside (rotate270 frame)
+              (rotate270 frame)))))
