@@ -43,6 +43,8 @@ My humble solutions to the exercises of [Structure and Interpretation of Compute
 
 ### 2.3 Symbolic Data
 
+- 2.3.1 Quotation [2.53](2-3/2-53.scm), [2.54](2-3/2-54.scm)
+
 ### 2.4 Multiple Representations for Abstract Data
 
 ### 2.5 Systems with Generic Operations
