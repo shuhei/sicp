@@ -12,6 +12,7 @@
        (eq? v1 v2)))
 
 ; Sum
+; Exercie 2.57
 (define (sum? x)
   (and (pair? x)
        (eq? (car x) '+)))
@@ -20,16 +21,21 @@
   (cadr s))
 
 (define (augend s)
-  (caddr s))
+  (apply make-sum (cddr s)))
 
-(define (make-sum a1 a2)
-  (cond ((=number? a1 0) a2)
-        ((=number? a2 0) a1)
-        ((and (number? a1) (number? a2))
-         (+ a1 a2))
-        (else (list '+ a1 a2))))
+; TODO: Simplify (+ (+ x y) z) to (+ x y z)
+(define (make-sum . as)
+  (let ((num (apply + (filter number? as)))
+        (vars (remove number? as)))
+    (let ((joined (if (= num 0)
+                   vars
+                   (cons num vars))))
+         (cond ((null? joined) 0)
+               ((null? (cdr joined)) (car joined))
+               (else (cons '+ joined))))))
 
 ; Product
+; Exercie 2.57
 (define (product? x)
   (and (pair? x)
        (eq? (car x) '*)))
@@ -38,21 +44,21 @@
   (cadr p))
 
 (define (multiplicand p)
-  (caddr p))
+  (apply make-product (cddr p)))
 
-(define (make-product m1 m2)
-  (cond ((or (=number? m1 0)
-             (=number? m2 0))
-         0)
-        ((=number? m1 1) m2)
-        ((=number? m2 1) m1)
-        ((and (number? m1)
-              (number? m2))
-         (* m1 m2))
-        (else (list '* m1 m2))))
+; TODO: Simplify (* (* x y) z) to (* x y z)
+(define (make-product . ms)
+  (let ((num (apply * (filter number? ms)))
+        (vars (remove number? ms)))
+    (let ((joined (cond ((= num 0) (list 0))
+                        ((= num 1) vars)
+                        (else (cons num vars)))))
+      (cond ((null? joined) 1)
+            ((null? (cdr joined)) (car joined))
+            (else (cons '* joined))))))
 
-; Exercie 2.56
 ; Exponentiation
+; Exercie 2.56
 (define (exponentiation? x)
   (and (pair? x)
        (eq? (car x) '**)))
@@ -91,5 +97,5 @@
 
 (deriv '(+ x 3) 'x)
 (deriv '(* x y) 'x)
-(deriv '(* (* x y) (+ x 3)) 'x)
+(deriv '(* x y (+ x 3)) 'x)
 (deriv '(** x 4) 'x)
