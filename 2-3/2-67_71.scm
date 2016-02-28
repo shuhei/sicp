@@ -153,3 +153,39 @@
 ; If fixed-length, a symbol is represented by 3 bits.
 (* 3 (length lyrics))
 ; 108 bits
+
+
+; Exercise 2.71
+; n = 5:
+;        31
+;        /\
+;      15  16
+;      /\
+;     7  8
+;    /\
+;   3  4
+;  / \
+; 1   2
+
+; n = 10:
+;                  1023
+;                  /  \
+;                511  512
+;                / \
+;              255 256
+;              / \
+;            127 128
+;            / \
+;          63   64
+;          /\
+;        31  32
+;        /\
+;      15  16
+;      /\
+;     7  8
+;    /\
+;   3  4
+;  / \
+; 1   2
+
+; 1 bit is required to encode the most frequent symbol.
