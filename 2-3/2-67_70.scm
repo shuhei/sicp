@@ -107,8 +107,11 @@
 (define (flatten items)
   (fold-right append () items))
 
-(flatten (map (lambda (sym) (encode-symbol sym sample-tree))
-              '(A D A B B C A)))
+(define (encode-symbols syms tree)
+  (flatten (map (lambda (sym) (encode-symbol sym tree))
+                syms)))
+
+(encode-symbols '(A D A B B C A) sample-tree)
 ; (0 1 1 0 0 1 0 1 0 1 1 1 0)
 
 ; Exercise 2.69
@@ -129,3 +132,24 @@
 ; Test
 (generate-huffman-tree '((A 4)))
 (generate-huffman-tree '((A 4) (B 2) (C 1) (D 1)))
+
+; Exercise 2.70
+(define freqs
+  '((A 2) (NA 16) (BOOM 1) (SHA  3) (GET  2) (YIP  9) (JOB  2) (WAH  1)))
+
+(define lyrics
+  '(Get a job
+    Sha na na na na na na na na
+    Get a job
+    Sha na na na na na na na na
+    Wah yip yip yip yip
+    yip yip yip yip yip
+    Sha boom))
+
+(encode-symbols lyrics (generate-huffman-tree freqs))
+(length (encode-symbols lyrics (generate-huffman-tree freqs)))
+; 84 bits
+
+; If fixed-length, a symbol is represented by 3 bits.
+(* 3 (length lyrics))
+; 108 bits
