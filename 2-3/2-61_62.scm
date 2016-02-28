@@ -13,7 +13,8 @@
              (cons x1 (intersection-set (cdr set1) (cdr set2))))
             ((< x1 x2)
              (intersection-set (cdr set1) set2))
-            (else (intersection-set set1 (cdr set2)))))))
+            (else
+              (intersection-set set1 (cdr set2)))))))
 
 ; Exercise 2.61
 (define (adjoin-set x set)
@@ -23,8 +24,9 @@
          set)
         ((< x (car set))
          (cons x set))
-        (else (cons (car set)
-                    (adjoin-set x (cdr set))))))
+        (else
+          (cons (car set)
+                (adjoin-set x (cdr set))))))
 
 ; Exercise 2.62
 (define (union-set set1 set2)
@@ -37,7 +39,8 @@
                    (cons x1 (union-set (cdr set1) (cdr set2))))
                   ((< x1 x2)
                    (cons x1 (union-set (cdr set1) set2)))
-                  (else (cons x2 (union-set set1 (cdr set2)))))))))
+                  (else
+                    (cons x2 (union-set set1 (cdr set2)))))))))
 
 ; Test
 (intersection-set (list 1 2 3) (list 2 3 5 6))
