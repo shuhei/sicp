@@ -46,7 +46,7 @@ My humble solutions to the exercises of [Structure and Interpretation of Compute
 - 2.3.1 Quotation [2.53, ... 2.55](2-3/2-53_55.scm)
 - 2.3.2 Example: Symbolic Differentiation [2.56, 2.57](2-3/2-56_57.scm), [2.58 1](2-3/2-58-1.scm), 2.58 2
 - 2.3.3 Example: Representing Sets [2.59](2-3/2-59.scm), [2.60](2-3/2-60.scm), [2.61, 2.62](2-3/2-61_62.scm), [2.63, 2.64, 2.65](2-3/2-63_65.scm), [2.66](2-3/2-66.scm)
-- 2.3.4 Example: Huffman Encoding Trees 2.67, ... 2.72
+- 2.3.4 Example: Huffman Encoding Trees [2.67, 2.68, 2.69](2-3/2-67_69.scm), ... 2.72
 
 ### 2.4 Multiple Representations for Abstract Data
 
