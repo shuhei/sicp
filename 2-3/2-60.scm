@@ -16,13 +16,13 @@
 
 ; O(mnd^2) where d is duplication count
 ; d^2 times slower than non-duplicate one.
-(define (intersect-set set1 set2)
+(define (intersection-set set1 set2)
   (cond ((or (null? set1) (null? set2))
          ())
         ((element-of-set? (car set1) set2)
          (cons (car set1)
-               (intersect-set (cdr set1) set2)))
-        (else (intersect-set (cdr set1) set2))))
+               (intersection-set (cdr set1) set2)))
+        (else (intersection-set (cdr set1) set2))))
 
 ; O(m) where s1 has m items and s2 has n items
 ; Faster than non-duplicate one.
@@ -36,8 +36,8 @@
 (adjoin-set 3 (list 1 2 3 4 5))
 (adjoin-set 9 (list 1 2 3 4 5))
 
-(intersect-set (list 1 2 3) (list 3 2 5))
-(intersect-set () (list 3 2 5))
+(intersection-set (list 1 2 3) (list 3 2 5))
+(intersection-set () (list 3 2 5))
 
 (union-set (list 1 2 3) (list 3 2 5))
 (union-set (list 1 2 3) (list 4 5))

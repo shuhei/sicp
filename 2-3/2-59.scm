@@ -11,13 +11,13 @@
     (cons x set)))
 
 ; O(mn) where s1 has m items and s2 has n items
-(define (intersect-set set1 set2)
+(define (intersection-set set1 set2)
   (cond ((or (null? set1) (null? set2))
          ())
         ((element-of-set? (car set1) set2)
          (cons (car set1)
-               (intersect-set (cdr set1) set2)))
-        (else (intersect-set (cdr set1) set2))))
+               (intersection-set (cdr set1) set2)))
+        (else (intersection-set (cdr set1) set2))))
 
 ; O(m * (m + n)) where s1 has m items and s2 has n items
 (define (union-set s1 s2)
@@ -33,8 +33,8 @@
 (adjoin-set 3 (list 1 2 3 4 5))
 (adjoin-set 9 (list 1 2 3 4 5))
 
-(intersect-set (list 1 2 3) (list 3 2 5))
-(intersect-set () (list 3 2 5))
+(intersection-set (list 1 2 3) (list 3 2 5))
+(intersection-set () (list 3 2 5))
 
 (union-set (list 1 2 3) (list 3 2 5))
 (union-set (list 1 2 3) (list 4 5))
