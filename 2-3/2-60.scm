@@ -1,16 +1,21 @@
-; O(n)
+; Good for cases that have a lot of adjoin and union,
+; and a fewer search and intersect.
+
+; O(nd) where d is duplication count
+; d times slower in the worst case than non-duplicate version.
+; Not bad for checking frequently inserted items.
 (define (element-of-set? x set)
   (cond ((null? set) false)
         ((equal? x (car set)) true)
         (else (element-of-set? x (cdr set)))))
 
-; O(n)
+; O(1)
+; n times faster than non-duplicate version.
 (define (adjoin-set x set)
-  (if (element-of-set? x set)
-    set
-    (cons x set)))
+  (cons x set))
 
-; O(mn) where s1 has m items and s2 has n items
+; O(mnd^2) where d is duplication count
+; d^2 times slower than non-duplicate one.
 (define (intersect-set set1 set2)
   (cond ((or (null? set1) (null? set2))
          ())
@@ -19,12 +24,10 @@
                (intersect-set (cdr set1) set2)))
         (else (intersect-set (cdr set1) set2))))
 
-; O(m * (m + n)) where s1 has m items and s2 has n items
+; O(m) where s1 has m items and s2 has n items
+; Faster than non-duplicate one.
 (define (union-set s1 s2)
-  (if (null? s1)
-    s2
-    (union-set (cdr s1)
-               (adjoin-set (car s1) s2))))
+  (append s1 s2))
 
 ; Test
 (element-of-set? 3 (list 1 2 4 8 9))
