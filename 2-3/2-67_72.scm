@@ -189,3 +189,9 @@
 ; 1   2
 
 ; 1 bit is required to encode the most frequent symbol.
+
+
+; Exercise 2.72
+
+; Most frequent: 2^(n-1)
+; Least frequent: 2^n
