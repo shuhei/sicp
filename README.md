@@ -50,6 +50,10 @@ My humble solutions to the exercises of [Structure and Interpretation of Compute
 
 ### 2.4 Multiple Representations for Abstract Data
 
+- 2.4.1 Representations for Complex Numbers
+- 2.4.2 Tagged Data
+- 2.4.3 Data-Directed Programming and Additivity 2.73, 2.74, [2.75](2-4/2-75.scm), [2.76](2-4/2-76.scm)
+
 ### 2.5 Systems with Generic Operations
 
 ## 3 Modularity, Objects, and State
