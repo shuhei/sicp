@@ -40,18 +40,19 @@
 (define (operator exp) (car exp))
 (define (operands exp) (cdr exp))
 
-; 1. numbers and variables are not pairs and cannot have type-tags.
+; 1. Suppose that we have operator-devi-implementation table, get the implementation and execute it.
+; Numbers and variables are not pairs and cannot have type-tags.
 
 ; 2.
 (define (install-sum-package)
-  (define (deriv-sum exp)
+  (define (deriv-sum exp var)
     (make-sum
       (deriv (addend exp) var)
       (deriv (augend exp) var)))
   (put 'deriv '+ deriv-sum))
 
 (define (install-product-package)
-  (define (deriv-product exp)
+  (define (deriv-product exp var)
     (make-sum
       (make-product
         (multiplier exp)
@@ -63,7 +64,7 @@
 
 ; 3.
 (define (install-exponentiation-package)
-  (define (deriv-exponentiation exp)
+  (define (deriv-exponentiation exp var)
     (make-product
       (make-product
         (exponent exp)
@@ -71,7 +72,7 @@
           (base exp)
           (- (exponent exp) 1)))
       (deriv (base exp))))
-  (put 'deriv '^ deriv-exponentiation))
+  (put 'deriv '** deriv-exponentiation))
 
 ; 4.
 ((get (operator exp) 'deriv)

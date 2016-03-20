@@ -1,6 +1,6 @@
 ; Explicit dispatch:
 ; New type -> Redefine each operation with the new type.
-; New operation -> Define the opration that hanldes all existing types.
+; New operation -> Define the operation that handles all existing types.
 
 ; Data-directed style:
 ; New type -> Only implement the new type installer.
