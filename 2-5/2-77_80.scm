@@ -25,6 +25,7 @@
 (define (angle z) (apply-generic 'angle z))
 
 (define (equ? x y) (apply-generic 'equ? x y))
+(define (=zero? z) (apply-generic '=zero? z))
 
 ; Install
 (install-scheme-number-package)
@@ -71,3 +72,16 @@
       (make-complex-from-mag-ang 3 1))
 (equ? (make-complex-from-mag-ang 3 1)
       (make-complex-from-mag-ang 3 2))
+
+; Exercise 2.80
+(=zero? (make-scheme-number 0))
+(=zero? (make-scheme-number 3))
+
+(=zero? (make-rational 0 3))
+(=zero? (make-rational 2 3))
+
+(=zero? (make-complex-from-real-imag 0 0))
+(=zero? (make-complex-from-real-imag 0 1))
+
+(=zero? (make-complex-from-mag-ang 0 1))
+(=zero? (make-complex-from-mag-ang 1 1))

@@ -14,6 +14,9 @@
   (define (equ? x y)
     (and (= (real-part x) (real-part y))
          (= (imag-part x) (imag-part y))))
+  (define (=zero? z)
+    (and (= 0 (real-part z))
+         (= 0 (imag-part z))))
 
   ;; interface to the rest of the system
   (define (tag x)
@@ -29,4 +32,5 @@
        (lambda (r a)
          (tag (make-from-mag-ang r a))))
   (put 'equ? '(rectangular rectangular) equ?)
+  (put '=zero? '(rectangular) =zero?)
   'done)

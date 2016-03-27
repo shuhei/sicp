@@ -13,6 +13,8 @@
   (define (equ? x y)
     (and (= (magnitude x) (magnitude y))
          (= (angle x) (angle y))))
+  (define (=zero? z)
+    (= 0 (magnitude z)))
 
   ;; interface to the rest of the system
   (define (tag x) (attach-tag 'polar x))
@@ -27,4 +29,5 @@
        (lambda (r a)
          (tag (make-from-mag-ang r a))))
   (put 'equ? '(polar polar) equ?)
+  (put '=zero? '(polar) =zero?)
   'done)
