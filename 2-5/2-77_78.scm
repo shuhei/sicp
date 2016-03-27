@@ -43,3 +43,6 @@
 ; magnitude strips the complex tag and invoke magnitude again.
 ; Then it's applied to rectangular's magnitude.
 ; apply-generic is invoked twice.
+
+; Exercise 2.78
+(add 3 4)
