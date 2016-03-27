@@ -27,7 +27,7 @@
 
 (define (contents datum)
   (cond
-    ((pair? datum) (car datum))
+    ((pair? datum) (cdr datum))
     ((number? datum) datum)
     (else (error "Bad tagged datum: CONTENTS" datum))))
 

@@ -49,6 +49,7 @@
   (put 'imag-part '(complex) imag-part)
   (put 'magnitude '(complex) magnitude)
   (put 'angle '(complex) angle)
+  (put 'equ? '(complex complex) equ?)
   'done)
 
 (define (make-complex-from-real-imag x y)

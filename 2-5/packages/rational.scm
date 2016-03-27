@@ -19,6 +19,9 @@
   (define (div-rat x y)
     (make-rat (* (numer x) (denom y))
               (* (denom x) (numer y))))
+  (define (equ? x y)
+    (and (= (numer x) (numer y))
+         (= (denom x) (denom y))))
   ;; interface to rest of the system
   (define (tag x) (attach-tag 'rational x))
   (put 'add '(rational rational)
@@ -31,6 +34,7 @@
        (lambda (x y) (tag (div-rat x y))))
   (put 'make 'rational
        (lambda (n d) (tag (make-rat n d))))
+  (put 'equ? '(rational rational) equ?)
   'done)
 
 (define (make-rational n d)

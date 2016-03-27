@@ -11,6 +11,8 @@
        (lambda (x y) (tag (/ x y))))
   (put 'make 'scheme-number
        (lambda (x) (tag x)))
+  (put 'equ? '(scheme-number scheme-number)
+       (lambda (x y) (= x y)))
   'done)
 
 (define (make-scheme-number n)

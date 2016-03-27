@@ -24,6 +24,8 @@
 (define (magnitude z) (apply-generic 'magnitude z))
 (define (angle z) (apply-generic 'angle z))
 
+(define (equ? x y) (apply-generic 'equ? x y))
+
 ; Install
 (install-scheme-number-package)
 (install-rational-package)
@@ -46,3 +48,26 @@
 
 ; Exercise 2.78
 (add 3 4)
+(add (make-rational 1 2)
+     (make-rational 1 4))
+
+; Exercise 2.79
+(equ? (make-scheme-number 3)
+      (make-scheme-number 3))
+(equ? (make-scheme-number 3)
+      (make-scheme-number 5))
+
+(equ? (make-rational 2 3)
+      (make-rational 2 3))
+(equ? (make-rational 2 3)
+      (make-rational 3 2))
+
+(equ? (make-complex-from-real-imag 3 4)
+      (make-complex-from-real-imag 3 4))
+(equ? (make-complex-from-real-imag 3 4)
+      (make-complex-from-real-imag 4 4))
+
+(equ? (make-complex-from-mag-ang 3 1)
+      (make-complex-from-mag-ang 3 1))
+(equ? (make-complex-from-mag-ang 3 1)
+      (make-complex-from-mag-ang 3 2))

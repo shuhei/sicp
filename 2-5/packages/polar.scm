@@ -10,6 +10,10 @@
   (define (make-from-real-imag x y)
     (cons (sqrt (+ (square x) (square y)))
           (atan y x)))
+  (define (equ? x y)
+    (and (= (magnitude x) (magnitude y))
+         (= (angle x) (angle y))))
+
   ;; interface to the rest of the system
   (define (tag x) (attach-tag 'polar x))
   (put 'real-part '(polar) real-part)
@@ -22,4 +26,5 @@
   (put 'make-from-mag-ang 'polar
        (lambda (r a)
          (tag (make-from-mag-ang r a))))
+  (put 'equ? '(polar polar) equ?)
   'done)
