@@ -24,11 +24,12 @@
   (iter table))
 
 ; Test
-; (define x (make-empty-table))
-; (get-table 'hello x)
-; (put-table 'hello 123 x)
-; (get-table 'hello x)
-; (put-table 'hello 234 x)
-; (put-table 'world 3 x)
-; (get-table 'hello x)
-; (get-table 'world x)
+(begin
+  (define x (make-empty-table))
+  (assert (equal? (get-table 'hello x) false))
+  (put-table 'hello 123 x)
+  (assert (equal? (get-table 'hello x) 123))
+  (put-table 'hello 234 x)
+  (put-table 'world 3 x)
+  (assert (equal? (get-table 'hello x) 234))
+  (assert (equal? (get-table 'world x) 3)))
