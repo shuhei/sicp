@@ -27,6 +27,8 @@
 
   ;; interface to rest of the system
   (define (tag x) (attach-tag 'rational x))
+  (put 'numer '(rational) numer)
+  (put 'denom '(rational) denom)
   (put 'add '(rational rational)
        (lambda (x y) (tag (add-rat x y))))
   (put 'sub '(rational rational)

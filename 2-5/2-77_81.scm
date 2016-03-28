@@ -12,6 +12,7 @@
 (load-lib "packages/rectangular")
 (load-lib "packages/polar")
 (load-lib "packages/complex")
+(load-lib "packages/coercion")
 
 ; Arithmetic operations
 (define (add x y) (apply-generic 'add x y))
@@ -19,6 +20,9 @@
 (define (mul x y) (apply-generic 'mul x y))
 (define (div x y) (apply-generic 'div x y))
 (define (exp x y) (apply-generic 'exp x y))
+
+(define (numer r) (apply-generic 'numer r))
+(define (denom r) (apply-generic 'denom r))
 
 (define (real-part z) (apply-generic 'real-part z))
 (define (imag-part z) (apply-generic 'imag-part z))
@@ -28,12 +32,18 @@
 (define (equ? x y) (apply-generic 'equ? x y))
 (define (=zero? z) (apply-generic '=zero? z))
 
+(define (raise z)
+  (let ((tag (type-tag z)))
+    ((get-raise tag) z)))
+
 ; Install
 (install-scheme-number-package)
 (install-rational-package)
 (install-rectangular-package)
 (install-polar-package)
 (install-complex-package)
+(install-coercion-package)
+(install-tower-coercion-package)
 
 (begin
   ; Exercise 2.77
@@ -95,6 +105,12 @@
   (assert (equal? (add (make-complex-from-real-imag 2 3)
                        (make-complex-from-real-imag 3 4))
                   (make-complex-from-real-imag 5 7)))
+
+  ; Exercise 2.83
+  (assert (equ? (raise 2)
+                (make-rational 2 1)))
+  (assert (equ? (raise (make-rational 1 2))
+                (make-complex-from-real-imag 0.5 0)))
 )
 
 ; Exercise 2.81
@@ -109,3 +125,16 @@
 
 ; 3.
 ; No need to modify.
+
+; Exercise 2.82
+; # Coercing all arguments to the type of one of them.
+; coercion table: rational->complex, scheme-number->complex, scheme-number->rational
+; op table: foo: '(complex complex complex)
+; (foo scheme-number scheme-number scheme-number)
+; Then scheme-numbers are not going to be coerced to complex and the implementation is not used.
+
+; Exercise 2.83
+; See coercion.scm
+
+(make-rational 1 2)
+(raise (make-rational 1 2))

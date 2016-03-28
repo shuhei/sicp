@@ -1,5 +1,6 @@
 (define table (make-empty-table))
 (define coercion-table (make-empty-table))
+(define raise-table (make-empty-table))
 
 (define (get op type)
   (let ((op-table (get-table op table)))
@@ -23,6 +24,12 @@
   (put-table (list from to)
              item
              coercion-table))
+
+(define (get-raise from)
+  (get-table from raise-table))
+
+(define (put-raise from item)
+  (put-table from item raise-table))
 
 (define (attach-tag type-tag contents)
   (if (eq? type-tag 'scheme-number)
