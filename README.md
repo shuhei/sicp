@@ -56,6 +56,10 @@ My humble solutions to the exercises of [Structure and Interpretation of Compute
 
 ### 2.5 Systems with Generic Operations
 
+- 2.5.1 Generic Arithmetic Operations [2.77, 2.78, 2.79, 2.80](2-77_81.scm)
+- 2.5.2 Combining Data of Different Types 2.81, 2.82, 2.83, 2.84, 2.85, 2.86
+- 2.5.3 Example: Symbolic Algebra
+
 ## 3 Modularity, Objects, and State
 
 ## 4 Metalinguistic Abstraction

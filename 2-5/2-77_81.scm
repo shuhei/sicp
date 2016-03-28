@@ -18,6 +18,7 @@
 (define (sub x y) (apply-generic 'sub x y))
 (define (mul x y) (apply-generic 'mul x y))
 (define (div x y) (apply-generic 'div x y))
+(define (exp x y) (apply-generic 'exp x y))
 
 (define (real-part z) (apply-generic 'real-part z))
 (define (imag-part z) (apply-generic 'imag-part z))
@@ -87,4 +88,24 @@
   (assert (not (=zero? (make-complex-from-real-imag 0 1))))
 
   (assert (=zero? (make-complex-from-mag-ang 0 1)))
-  (assert (not (=zero? (make-complex-from-mag-ang 1 1)))))
+  (assert (not (=zero? (make-complex-from-mag-ang 1 1))))
+
+  ; Exercise 2.81
+  (assert (= (exp 2 3) 8))
+  (assert (equal? (add (make-complex-from-real-imag 2 3)
+                       (make-complex-from-real-imag 3 4))
+                  (make-complex-from-real-imag 5 7)))
+)
+
+; Exercise 2.81
+; 1.
+(exp 2 3)
+(exp (make-complex-from-real-imag 2 3)
+     (make-complex-from-real-imag 3 4))
+;No method for these types: APPLY-GENERIC (exp (complex complex))
+
+; 2.
+; Louis is not correct. It just works without modification to apply-generic.
+
+; 3.
+; No need to modify.
