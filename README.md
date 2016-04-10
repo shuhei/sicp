@@ -62,6 +62,12 @@ My humble solutions to the exercises of [Structure and Interpretation of Compute
 
 ## 3 Modularity, Objects, and State
 
+### 3.1 Assignment and Local State
+
+- 3.1.1 Local State Variables [3.1](3-1/3-1.scm), [3.2](3-1/3-2.scm), [3.3](3-1/3-3.scm), [3.4](3-1/3-4.scm)
+- 3.1.2 The Benefits of Introducing Assignment [3.5](3-1/3-5.scm), [3.6](3-1/3-6.scm)
+- 3.1.3 The Cost of Introducing Assignment [3.7](3-1/3-7.scm), [3.8](3-1/3-8.scm)
+
 ## 4 Metalinguistic Abstraction
 
 ## 5 Computing with Register Machines
