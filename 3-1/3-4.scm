@@ -14,10 +14,12 @@
   (define failure 0)
   (define (dispatch p m)
     (if (eq? p password)
-      (cond ((eq? m 'withdraw) withdraw)
-            ((eq? m 'deposit) deposit)
-            (else
-              (error "Unknown request: MAKE-ACCOUNT" m)))
+      (begin
+        (set! failure 0)
+        (cond ((eq? m 'withdraw) withdraw)
+              ((eq? m 'deposit) deposit)
+              (else
+                (error "Unknown request: MAKE-ACCOUNT" m))))
       (begin
         (set! failure (+ failure 1))
         (if (>= failure 7) (call-the-cops))
